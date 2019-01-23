@@ -1,4 +1,4 @@
-# EnumComparer
+# UnityLabs.EnumComparer
 
 An optimised type-safe enum comparer that doesn't box enum values, created specifically for .NET Framework 3.5 and older.
 Newer .NET Framework versions fix the enum-value boxing, so this is not relevant in those environments.
@@ -8,6 +8,8 @@ This is a hybrid of:
 
 This is best used as a comparer in `Dictionary<T1,T2>` and `Hashset<T>` objects, as they both resort to old-school `ObjectEqualityComparer<T>` when created via their default constructors (via `EqualityComparer<T>.Default`).
 Both these types do a comparison check each time you deserialize, lookup, insert, or remove an entry. `EnumComparer` saves boxing allocations in these cases.
+
+"Don't be an unwitting boxer." - Wise person.
 
 ## Usage
 
